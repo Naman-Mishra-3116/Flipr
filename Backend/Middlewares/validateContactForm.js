@@ -6,7 +6,7 @@ export const validateContactForm = (req, res, next) => {
     const schema = joi.object({
       fullName: joi.string().min(6).max(20).required(),
       email: joi.string().email().required(),
-      mobileNumber: joi.number().min(10).max(10).required(),
+      mobileNumber: joi.string().length(10).required(),
       city: joi.string().min(3).required(),
     });
 

@@ -3,6 +3,19 @@ import { Contact } from "../Models/ContactModel.js";
 export const contactSubmissionController = async function (req, res) {
   try {
     const { email, fullName, city, mobileNumber } = req.body;
+    const isExisting = await Contact.findOne({
+      email,
+      fullName,
+      city,
+      mobileNumber,
+    });
+    if (isExisting) {
+      return res.status(400).json({
+        message: "Contact Already exist",
+        error: true,
+        success: false,
+      });
+    }
     const contact = new Contact({
       email,
       fullName,

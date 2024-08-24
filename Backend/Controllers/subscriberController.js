@@ -5,7 +5,7 @@ export const addSubscriber = async function (req, res) {
     const { email } = req.body;
     const isExisting = await Subscriber.findOne({ email });
     if (isExisting) {
-      res.status(409).json({
+      return res.status(409).json({
         message: "You have already subscribed to our newsletter",
         error: true,
         success: false,
@@ -32,12 +32,12 @@ export const addSubscriber = async function (req, res) {
 
 export const getAllAvailableSubscriber = async function (req, res) {
   try {
-    const subscribers = await Subscriber.find();
+    const data = await Subscriber.find();
     return res.status(200).json({
       message: "Data Deliverd successfully!",
       error: false,
       success: true,
-      subscribers,
+      data,
     });
   } catch (error) {
     res.status(400).json({

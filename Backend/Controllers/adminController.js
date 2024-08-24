@@ -4,6 +4,14 @@ import { Client } from "./../Models/ClientModel.js";
 export const addProjectController = async (req, res) => {
   try {
     const { image, name, description } = req.body;
+    const isExisting = await Project.findOne({ image, name, description });
+    if (isExisting) {
+      return res.status(409).json({
+        message: "Project With specified data already exist",
+        error: true,
+        success: false,
+      });
+    }
     const project = new Project({
       image,
       name,
@@ -28,6 +36,19 @@ export const addProjectController = async (req, res) => {
 export const addClientController = async (req, res) => {
   try {
     const { image, name, description, designation } = req.body;
+    const isExisting = await Client.findOne({
+      image,
+      name,
+      description,
+      designation,
+    });
+    if (isExisting) {
+      return res.status(409).json({
+        message: "Client with the specifiied data already exist",
+        success: false,
+        error: true,
+      });
+    }
     const client = new Client({
       image,
       name,

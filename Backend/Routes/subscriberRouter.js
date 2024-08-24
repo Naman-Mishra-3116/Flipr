@@ -7,6 +7,7 @@ import {
 
 const router = Router();
 
+
 router
   .route("/subscriber/createSubscriber")
   .post(validateSubscriberEmail, addSubscriber);

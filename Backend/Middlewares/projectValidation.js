@@ -5,7 +5,12 @@ export const validateProjectData = (req, res, next) => {
     const { image, name, description } = req.body;
     const schema = joi.object({
       image: joi.string().required(),
-      name: joi.string().min(5).max(15).required(),
+      name: joi
+      .string()
+      .min(5)
+      .max(25)
+      .pattern(/^[A-Za-z\s]+$/)
+      .required(),
       description: joi.string().min(10).max(200).required(),
     });
     const { error } = schema.validate({ image, name, description });

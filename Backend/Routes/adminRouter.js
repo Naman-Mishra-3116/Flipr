@@ -10,7 +10,7 @@ import { addClientController } from "../Controllers/adminController.js";
 
 const router = Router();
 
-router.rotue("/admin/getAllClient").get(getAllClientData);
+router.route("/admin/getAllClient").get(getAllClientData);
 router.route("/admin/getAllProject").get(getAllProjectData);
 router.route("/admin/addClient").post(validateClientData, addClientController);
 router
