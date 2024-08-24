@@ -18,7 +18,7 @@ export const useFetchData = function (path) {
         console.clear();
         console.log(error.response.data);
         console.log("Error in fetching data ", path);
-        setError(error.response.data.message);
+        setError(error.response.data.message || "Error in Fetching Data");
       } finally {
         setLoading(false);
       }
