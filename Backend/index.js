@@ -3,6 +3,10 @@ import bodyParser from "body-parser";
 import { config } from "dotenv";
 import cors from "cors";
 import { connectToMongoDatabase } from "./Database/connectDatabase.js";
+import { ContactRouter } from "./Routes/contactRouter.js";
+import { AdminRouter } from "./Routes/adminRouter.js";
+import { SubscriberRouter } from "./Routes/subscriberRouter.js";
+
 config();
 
 const PORT = process.env.PORT || 5000;
@@ -15,6 +19,10 @@ app.use(cors());
 app.get("/test", (_, res) => {
   res.send("Hello world");
 });
+
+app.use(AdminRouter);
+app.use(ContactRouter);
+app.use(SubscriberRouter);
 
 app.listen(PORT, () => {
   console.log(`The server has started on the port ${PORT}`);
