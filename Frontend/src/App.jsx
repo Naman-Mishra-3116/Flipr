@@ -8,10 +8,15 @@ import CreateClient from "./Admin/CreateClient";
 import CreateProject from "./Admin/CreateProject";
 import AllClients from "./Admin/AllClients";
 import RootElementForAdmin from "./Admin/RootElementForAdmin";
+import RootElementForMainWebsite from "./Website/RootElementForMainWebsite";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <RootElementForMainWebsite />,
+    },
     {
       path: "/admin",
       element: <RootElementForAdmin />,
