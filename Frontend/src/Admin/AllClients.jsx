@@ -39,7 +39,15 @@ const AllClients = () => {
                   className="border-b border-[#E1D7B7] hover:bg-slate-300 hover:text-[#1E2A5E]"
                 >
                   <td className="py-3 px-6 text-left">{index + 1}</td>
-                  <td className="py-3 px-6 text-left">{item.image}</td>
+                  <td className="py-3 px-6 text-left">
+                    <figure className="w-[60px] h-[60px] rounded-full  flex-shrink-0 overflow-hidden mr-4">
+                      <img
+                        src={item.image}
+                        alt="Selected file preview"
+                        className="w-full h-full object-cover"
+                      />
+                    </figure>
+                  </td>
                   <td className="py-3 px-6 text-left">{item.name}</td>
                   <td className="py-3 px-6 text-left">{item.designation}</td>
                   <td className="py-3 px-6 text-left">{"Delete"}</td>
@@ -54,4 +62,3 @@ const AllClients = () => {
 };
 
 export default AllClients;
-

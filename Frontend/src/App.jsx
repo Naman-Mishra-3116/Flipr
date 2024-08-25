@@ -8,6 +8,8 @@ import CreateClient from "./Admin/CreateClient";
 import CreateProject from "./Admin/CreateProject";
 import AllClients from "./Admin/AllClients";
 import RootElementForAdmin from "./Admin/RootElementForAdmin";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const router = createBrowserRouter([
     {
@@ -45,6 +47,16 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <ToastContainer
+        position="top-left"
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        closeOnClick={true}
+        closeButton={false}
+        autoClose={3000}
+        theme="colored"
+      />
     </>
   );
 }
