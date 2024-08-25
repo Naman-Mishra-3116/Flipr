@@ -45,8 +45,8 @@ const CreateClient = () => {
       createToast(resp.data.message, "success");
       navigate("/admin/allClients");
     } catch (error) {
-      console.log(error.message);
-      createToast(error.message, "error");
+      console.log(error.response.data.message);
+      createToast(error.response.data.message, "error");
     } finally {
       setLoading(false);
     }

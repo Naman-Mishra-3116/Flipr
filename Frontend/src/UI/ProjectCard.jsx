@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 const ProjectCard = ({ image, title, description }) => {

@@ -9,10 +9,19 @@ const AdminHeader = () => {
   };
 
   return (
-    <header className="bg-[#1E2A5E] w-full py-5 px-8 flex justify-end text-lg">
+    <header className="bg-[#1E2A5E] w-full py-5 px-8 flex justify-between text-lg">
+      <NavLink
+        to={"/"}
+        className={
+          "hover:bg-[#E1D7B7] hover:text-[#1e2a5e] hover:rounded-md px-4 py-2 transition duration-300 text-[#E1D7B7]"
+        }
+        end
+      >
+        Home
+      </NavLink>
       <nav className="flex justify-center items-center gap-5 text-[#E1D7B7]">
         <NavLink to={"/admin"} className={styleFunction} end>
-          Home
+          Projects
         </NavLink>
         <NavLink to={"/admin/allClients"} className={styleFunction} end>
           Clients

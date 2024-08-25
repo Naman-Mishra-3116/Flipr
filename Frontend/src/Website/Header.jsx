@@ -5,7 +5,7 @@ import logo from "../assets/data/images/logo.svg";
 const Header = () => {
   const styleFunction = ({ isActive }) => {
     return isActive
-      ? "bg-white text-[#1E2A5E] rounded-md px-4 py-2 transition duration-300"
+      ? "bg-white text-[#1E2A5E] rounded-md px-4 py-2 transition duration-300 hover:bg-orange-400 hover:text-white"
       : "hover:text-[#1E2A5E] hover:rounded-md px-4 py-2 transition duration-300";
   };
 
@@ -14,10 +14,20 @@ const Header = () => {
       <div>
         <img src={logo} alt="" />
       </div>
-      <nav className="flex justify-center items-center gap-5 text-[#E1D7B7]">
+      <nav className="flex justify-center items-center gap-5 ">
         <NavLink to={"/"} className={styleFunction} end>
           Home
         </NavLink>
+        <NavLink
+          to={"/admin"}
+          className={
+            "text-[#1E2A5E] px-4 py-2 hover:bg-orange-400 transition duration-300 hover:text-white rounded-lg"
+          }
+          end
+        >
+          Admin Panel
+        </NavLink>
+
         <NavLink to={"/"} className={styleFunction} end>
           Services
         </NavLink>
@@ -29,7 +39,9 @@ const Header = () => {
         </NavLink>
         <NavLink
           to={"/"}
-          className={"bg-orange-600 text-white px-4 py-2 rounded-lg"}
+          className={
+            "bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg"
+          }
           end
         >
           Contact
