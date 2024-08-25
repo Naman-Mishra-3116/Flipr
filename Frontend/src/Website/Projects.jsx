@@ -8,7 +8,7 @@ const Projects = () => {
   const { loading, error, data } = useFetchData("/admin/getAllProject");
 
   return (
-    <div className="bg-blue-50 flex flex-col gap-6 text-center items-center justify-center mt-4">
+    <div className="bg-blue-50 flex flex-col gap-6 text-center items-center justify-center mt-4" id="projects">
       <h1 className="text-blue-600 font-semibold text-[30px] mt-4">
         Our Projects
       </h1>

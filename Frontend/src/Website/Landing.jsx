@@ -12,6 +12,7 @@ const Landing = () => {
         height: "100vh",
         width: "100%",
       }}
+      id="landing"
     >
       <div className="flex gap-5 items-center justify-between h-full text-white p-8">
         <div className="p-8 text-left mt-[80px] ml-6">

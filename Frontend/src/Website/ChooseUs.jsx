@@ -58,7 +58,7 @@ const ChooseUs = () => {
           <ChooseOption icon={paint} title={"Design"} />
           <ChooseOption icon={dollar} title={"Marketing"} />
         </div>
-        <div className="flex mt-2 w-full mr-10 justify-end mt-8">
+        <div className="flex w-full mr-10 justify-end mt-8">
           <div className="mr-[200px]">
             <img src={gt} />
           </div>

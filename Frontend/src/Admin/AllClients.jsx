@@ -2,9 +2,12 @@ import React from "react";
 import Loading from "../UI/Loading";
 import Error from "../UI/Error";
 import { useFetchData } from "../Hooks/useFetchData";
+import useDeleteItem from "../Hooks/useDeleteItem";
 
 const AllClients = () => {
   const { loading, error, data } = useFetchData("/admin/getAllClient");
+  const { deleteById } = useDeleteItem("/admin/allClients");
+
   return (
     <div className="flex justify-center items-center mt-10">
       {error && <Error errMessage={error} />}
@@ -40,7 +43,7 @@ const AllClients = () => {
                 >
                   <td className="py-3 px-6 text-left">{index + 1}</td>
                   <td className="py-3 px-6 text-left">
-                    <figure className="w-[60px] h-[60px] rounded-full  flex-shrink-0 overflow-hidden mr-4">
+                    <figure className="w-[40px] h-[40px] rounded-full  flex-shrink-0 overflow-hidden mr-4">
                       <img
                         src={item.image}
                         alt="Selected file preview"
@@ -50,7 +53,14 @@ const AllClients = () => {
                   </td>
                   <td className="py-3 px-6 text-left">{item.name}</td>
                   <td className="py-3 px-6 text-left">{item.designation}</td>
-                  <td className="py-3 px-6 text-left">{"Delete"}</td>
+                  <td className="py-3 px-6 text-left">
+                    <button
+                      onClick={() => deleteById(item._id, "client")}
+                      className="bg-red-500 px-4 py-2 rounded-lg text-white"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

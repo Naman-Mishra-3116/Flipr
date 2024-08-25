@@ -2,9 +2,11 @@ import React from "react";
 import Loading from "../UI/Loading";
 import Error from "../UI/Error";
 import { useFetchData } from "../Hooks/useFetchData";
+import useDeleteItem from "../Hooks/useDeleteItem";
 
 const AllContacts = () => {
   const { loading, error, data } = useFetchData("/contacts/getAllContact");
+  const { deleteById } = useDeleteItem("/admin/allContacts");
   return (
     <div className="flex justify-center items-center mt-10">
       {error && <Error errMessage={error} />}
@@ -45,7 +47,14 @@ const AllContacts = () => {
                   <td className="py-3 px-6 text-left">{item.email}</td>
                   <td className="py-3 px-6 text-left">{item.city}</td>
                   <td className="py-3 px-6 text-left">{item.mobileNumber}</td>
-                  <td className="py-3 px-6 text-left">{"Delete"}</td>
+                  <td className="py-3 px-6 text-left">
+                    <button
+                      onClick={() => deleteById(item._id, "con")}
+                      className="bg-red-500 px-4 py-2 rounded-lg text-white"
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

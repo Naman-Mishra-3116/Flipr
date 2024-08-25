@@ -2,9 +2,11 @@ import React from "react";
 import Loading from "../UI/Loading";
 import Error from "../UI/Error";
 import { useFetchData } from "../Hooks/useFetchData";
+import useDeleteItem from "../Hooks/useDeleteItem";
 
 const AllSubscribers = () => {
   const { data, error, loading } = useFetchData("/subscriber/getAllSubscriber");
+  const {  deleteById } = useDeleteItem("/admin/subscribers");
 
   return (
     <div className="flex justify-center items-center mt-10">
@@ -38,7 +40,14 @@ const AllSubscribers = () => {
                   <td className="py-3 px-6 text-left">{index + 1}</td>
                   <td className="py-3 px-6 text-left">{item.email}</td>
                   <td className="py-3 px-6 text-left">{item.createdAt}</td>
-                  <td className="py-3 px-6 text-left">{"Delete"}</td>
+                  <td className="py-3 px-6 text-left">
+                    <button
+                      onClick={() => deleteById(item._id, "sub")}
+                      className="bg-red-500 px-4 py-2 rounded-lg text-white"
+                    >
+                       Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

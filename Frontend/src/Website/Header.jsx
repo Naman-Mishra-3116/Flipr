@@ -9,13 +9,22 @@ const Header = () => {
       : "hover:text-[#1E2A5E] hover:rounded-md px-4 py-2 transition duration-300";
   };
 
+  const scroll = function (id) {
+    const section = document.getElementById(id);
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="bg-[white] w-full py-5 px-20 flex justify-between text-lg mb-0 sticky top-0 z-50">
       <div>
         <img src={logo} alt="" />
       </div>
       <nav className="flex justify-center items-center gap-5 ">
-        <NavLink to={"/"} className={styleFunction} end>
+        <NavLink
+          onClick={() => scroll("landing")}
+          className={styleFunction}
+          end
+        >
           Home
         </NavLink>
         <NavLink
@@ -28,17 +37,25 @@ const Header = () => {
           Admin Panel
         </NavLink>
 
-        <NavLink to={"/"} className={styleFunction} end>
+        <NavLink
+          onClick={() => scroll("projects")}
+          className={styleFunction}
+          end
+        >
           Services
         </NavLink>
         <NavLink to={"/"} className={styleFunction} end>
-          About Projects
+          About Us
         </NavLink>
-        <NavLink to={"/"} className={styleFunction} end>
+        <NavLink
+          onClick={() => scroll("clients")}
+          className={styleFunction}
+          end
+        >
           Testimonials
         </NavLink>
         <NavLink
-          to={"/"}
+          onClick={() => scroll("landing")}
           className={
             "bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg"
           }

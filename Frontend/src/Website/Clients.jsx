@@ -7,7 +7,10 @@ import ClientCard from "../UI/ClientCard";
 const Clients = () => {
   const { loading, error, data } = useFetchData("/admin/getAllClient");
   return (
-    <div className="bg-white p-14 flex flex-col gap-6 text-center items-center justify-center mb-10">
+    <div
+      className="bg-white p-14 flex flex-col gap-6 text-center items-center justify-center mb-10 "
+      id="clients"
+    >
       <h1 className="text-blue-600 font-semibold text-[30px] mb-10 mt-10">
         Happy Clients
       </h1>

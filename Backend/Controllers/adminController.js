@@ -1,5 +1,7 @@
 import { Project } from "../Models/ProjectModel.js";
 import { Client } from "./../Models/ClientModel.js";
+import { Subscriber } from "./../Models/SubscriberModel.js";
+import { Contact } from "./../Models/ContactModel.js";
 
 export const addProjectController = async (req, res) => {
   try {
@@ -102,6 +104,39 @@ export const getAllProjectData = async (req, res) => {
       error: true,
       success: false,
       message: err.message,
+    });
+  }
+};
+
+export const deleteItem = async (req, res) => {
+  try {
+    const { id, type } = req.body;
+    let model = null;
+    if (type === "sub") {
+      model = Subscriber;
+    } else if (type === "con") {
+      model = Contact;
+    } else if (type === "client") {
+      model = Client;
+    } else if (type === "project") {
+      model = Project;
+    } else {
+      model = null;
+    }
+
+    if (model) {
+      const resp = await model.findByIdAndDelete(id);
+      return res.status(200).json({
+        message: "Deleted Successfully",
+        success: true,
+        error: false,
+      });
+    }
+  } catch (error) {
+    res.status(400).json({
+      message: "Error in Deleting Item " + error.message,
+      success: false,
+      error: true,
     });
   }
 };
