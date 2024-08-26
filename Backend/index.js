@@ -9,30 +9,26 @@ import { SubscriberRouter } from "./Routes/subscriberRouter.js";
 
 config();
 
-// const test = {
-//   origin: "*",
-//   methods: "GET, POST, PUT, DELETE, OPTIONS",
-//   allowedHeaders: "Content-Type, Authorization",
-// };
+const test = {
+  origin: "*",
+  methods: "GET, POST, PUT, DELETE, OPTIONS",
+  allowedHeaders: "Content-Type, Authorization",
+};
 
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+app.use(cors(test));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // allow all domains
-  res.setHeader('Access-Control-Allow-Methods', 'GET, PUT');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-  next();
-});
-// app.use(cors(test));
 
 app.get("/", (_, res) => {
   res.send("Hello world");
 });
 
+app.get("/hello", (req, res) => {
+  res.send("this is working  the way it should  wokr");
+});
 app.use(AdminRouter);
 app.use(ContactRouter);
 app.use(SubscriberRouter);

@@ -13,11 +13,13 @@ export const useFetchData = function (path) {
       setLoading(true);
       try {
         const resp = await axios.get(`${server}${path}`);
+
         console.log(resp.data);
         const data = resp.data.data;
+        console.log(data);
         setData(data);
       } catch (error) {
-        console.clear();
+        console.clear(); 
         console.log(error.response);
         console.log(error.response);
         console.log("Error in fetching data ", path);
