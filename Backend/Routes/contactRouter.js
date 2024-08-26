@@ -8,9 +8,9 @@ import {
 const router = Router();
 
 router
-  .route("/contact/createContact")
+  .route("/createContact")
   .post(validateContactForm, contactSubmissionController);
 
-router.route("/contacts/getAllContact").get(getAllContactDetails);
+router.route("/getAllContact").get(getAllContactDetails);
 
 export { router as ContactRouter };

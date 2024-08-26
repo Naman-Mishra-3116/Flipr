@@ -29,7 +29,7 @@ const ContactForm = () => {
     try {
       setLoading(true);
       const resp = await axios.post(
-        `${server}/contact/createContact`,
+        `${server}/contacts/createContact`,
         formData
       );
       const { message } = resp.data;

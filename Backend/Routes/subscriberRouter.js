@@ -9,9 +9,9 @@ const router = Router();
 
 
 router
-  .route("/subscriber/createSubscriber")
+  .route("/createSubscriber")
   .post(validateSubscriberEmail, addSubscriber);
 
-router.route("/subscriber/getAllSubscriber").get(getAllAvailableSubscriber);
+router.route("/getAllSubscriber").get(getAllAvailableSubscriber);
 
 export { router as SubscriberRouter };

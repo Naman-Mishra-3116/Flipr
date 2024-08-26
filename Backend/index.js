@@ -29,9 +29,9 @@ app.get("/", (_, res) => {
 app.get("/hello", (req, res) => {
   res.send("this is working  the way it should  wokr");
 });
-app.use(AdminRouter);
-app.use(ContactRouter);
-app.use(SubscriberRouter);
+app.use("/admin", AdminRouter);
+app.use("/contacts", ContactRouter);
+app.use("/subscriber", SubscriberRouter);
 
 app.listen(PORT, () => {
   console.log(`The server has started on the port ${PORT}`);

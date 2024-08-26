@@ -11,12 +11,12 @@ import { addClientController } from "../Controllers/adminController.js";
 
 const router = Router();
 
-router.route("/admin/getAllClient").get(getAllClientData);
-router.route("/admin/getAllProject").get(getAllProjectData);
-router.route("/admin/addClient").post(validateClientData, addClientController);
-router.route("/admin/deleteItem").post(deleteItem)
+router.route("/getAllClient").get(getAllClientData);
+router.route("/getAllProject").get(getAllProjectData);
+router.route("/addClient").post(validateClientData, addClientController);
+router.route("/deleteItem").post(deleteItem)
 router
-  .route("/admin/addProject")
+  .route("/addProject")
   .post(validateProjectData, addProjectController);
 
 export { router as AdminRouter };
