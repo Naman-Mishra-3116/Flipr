@@ -18,7 +18,7 @@ export const useFetchData = function (path) {
       } catch (error) {
         console.clear();
         console.log(error.response);
-        console.log(error.resonse.data);
+        console.log(error.resonse);
         console.log("Error in fetching data ", path);
         setError(error.response.data.message || "Error in Fetching Data");
       } finally {
