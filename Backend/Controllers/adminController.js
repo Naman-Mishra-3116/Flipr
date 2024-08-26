@@ -74,6 +74,7 @@ export const addClientController = async (req, res) => {
 
 export const getAllClientData = async (req, res) => {
   try {
+    console.log("Reached the function call")
     const data = await Client.find();
     res.status(200).json({
       message: "Client Data delivered Successfully!",
