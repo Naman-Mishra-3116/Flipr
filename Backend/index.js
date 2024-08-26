@@ -10,7 +10,7 @@ import { SubscriberRouter } from "./Routes/subscriberRouter.js";
 config();
 
 const test = {
-  origin: "*",
+  origin: "https://naman-mishra-projectfrontend-r59z1sn7a.vercel.app",
   methods: "GET, POST, PUT, DELETE, OPTIONS",
   allowedHeaders: "Content-Type, Authorization",
 };

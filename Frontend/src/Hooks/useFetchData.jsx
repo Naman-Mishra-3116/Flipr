@@ -7,6 +7,7 @@ export const useFetchData = function (path) {
   const [error, setError] = useState(false);
   const [data, setData] = useState([]);
 
+  console.log("Server is :", server);
   useEffect(() => {
     const fetchData = async function () {
       setLoading(true);
@@ -17,6 +18,7 @@ export const useFetchData = function (path) {
       } catch (error) {
         console.clear();
         console.log(error.response.data);
+        console.log(error.resonse);
         console.log("Error in fetching data ", path);
         setError(error.response.data.message || "Error in Fetching Data");
       } finally {
