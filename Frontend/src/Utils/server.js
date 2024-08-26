@@ -1,2 +1,2 @@
-export const server = import.meta.env.VITE_SERVER;
-export const client = import.meta.env.VITE_CLIENT;
+export const server = "https://flipr-backend.vercel.app";
+export const client = "https://naman-mishra-project.vercel.app";
