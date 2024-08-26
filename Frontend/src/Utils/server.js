@@ -1,2 +1,2 @@
-export const server = "https://flipr-backend.vercel.app";
-export const client = "https://naman-mishra-project.vercel.app";
+export const server = "http://localhost:5000";
+export const client = "http://localhost:5173";
