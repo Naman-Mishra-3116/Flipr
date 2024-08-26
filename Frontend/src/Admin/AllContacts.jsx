@@ -28,7 +28,10 @@ const AllContacts = () => {
 
             <tbody className="text-black text-md font-bold">
               {data.map((item, index) => (
-                <tr className="border-b border-orange-400 hover:bg-blue-50 hover:text-gray-800">
+                <tr
+                  className="border-b border-orange-400 hover:bg-blue-50 hover:text-gray-800"
+                  key={index}
+                >
                   <td className="py-3 px-6 text-left">{index + 1}</td>
                   <td className="py-3 px-6 text-left">{item.fullName}</td>
                   <td className="py-3 px-6 text-left">{item.email}</td>
@@ -36,7 +39,7 @@ const AllContacts = () => {
                   <td className="py-3 px-6 text-left">{item.mobileNumber}</td>
                   <td className="py-3 px-6 text-left">
                     <button
-                      onClick={() => deleteById(item._id, "client")}
+                      onClick={() => deleteById(item._id, "con")}
                       className="bg-red-500 px-4 py-2 rounded-lg text-white"
                     >
                       Delete

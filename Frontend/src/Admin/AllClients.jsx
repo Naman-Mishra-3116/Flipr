@@ -20,6 +20,7 @@ const AllClients = () => {
           deleteById={deleteById}
           isProject={false}
           isClient={true}
+          type="client"
         />
       )}
     </div>

@@ -3,7 +3,6 @@ import Loading from "../UI/Loading";
 import Error from "../UI/Error";
 import { useFetchData } from "../Hooks/useFetchData";
 import useDeleteItem from "../Hooks/useDeleteItem";
-import TableBody from "../UI/TableBody";
 import TableHead from "../UI/TableHead";
 
 const AllSubscribers = () => {
@@ -20,13 +19,16 @@ const AllSubscribers = () => {
             <TableHead array={["S.no", "Email", "Time", "Action"]} />
             <tbody className="text-black text-md font-bold">
               {data.map((item, index) => (
-                <tr className="border-b border-orange-400 hover:bg-blue-50 hover:text-gray-800">
+                <tr
+                  className="border-b border-orange-400 hover:bg-blue-50 hover:text-gray-800"
+                  key={item}
+                >
                   <td className="py-3 px-6 text-left">{index + 1}</td>
                   <td className="py-3 px-6 text-left">{item.email}</td>
                   <td className="py-3 px-6 text-left">{item.createdAt}</td>
                   <td className="py-3 px-6 text-left">
                     <button
-                      onClick={() => deleteById(item._id, "client")}
+                      onClick={() => deleteById(item._id, "sub")}
                       className="bg-red-500 px-4 py-2 rounded-lg text-white"
                     >
                       Delete

@@ -1,7 +1,7 @@
 import React from "react";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
-const Table = ({ array, data, deleteById, isProject, isClient }) => {
+const Table = ({ array, data, deleteById, isProject, isClient, type }) => {
   return (
     <div className="overflow-x-auto w-full ml-5 mr-5">
       <table className="min-w-max w-full table-auto border-collapse border border-[#E1D7B7]">
@@ -11,6 +11,7 @@ const Table = ({ array, data, deleteById, isProject, isClient }) => {
           deleteById={deleteById}
           isProject={isProject}
           isClient={isClient}
+          type={type}
         />
       </table>
     </div>
