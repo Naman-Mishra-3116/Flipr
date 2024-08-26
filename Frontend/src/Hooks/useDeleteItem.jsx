@@ -14,7 +14,7 @@ const useDeleteItem = (redirectTo) => {
       createToast(resp.data.message, "success");
       window.location.href = `${client}${redirectTo}`;
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error.response);
       createToast(error.response.data.message, "error");
     } finally {
     }
