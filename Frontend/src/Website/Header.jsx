@@ -44,7 +44,12 @@ const Header = () => {
         >
           Services
         </NavLink>
-        <NavLink to={"/"} className={styleFunction} end>
+        <NavLink
+          to={"/"}
+          className={styleFunction}
+          end
+          onClick={() => scroll("about")}
+        >
           About Us
         </NavLink>
         <NavLink

@@ -2,28 +2,19 @@ import React from "react";
 import e11 from "../assets/data/images/e11.svg";
 import e12 from "../assets/data/images/e12.svg";
 import e13 from "../assets/data/images/e13.svg";
-import e28 from "../assets/data/images/e28.svg";
-import e29 from "../assets/data/images/e29.svg";
-import e30 from "../assets/data/images/e30.svg";
-import e31 from "../assets/data/images/e31.svg";
-import e35 from "../assets/data/images/e35.svg";
-import p1 from "../assets/data/images/p1.svg";
-import p2 from "../assets/data/images/p2.svg";
-import p3 from "../assets/data/images/p3.svg";
-import p4 from "../assets/data/images/p4.svg";
-import p5 from "../assets/data/images/p5.svg";
-import p6 from "../assets/data/images/p6.svg";
-import r58 from "../assets/data/shapes/rectangle58.svg";
+import r58 from "../assets/data/shapes/r58.svg";
 import home from "../assets/data/icons/home.svg";
 import paint from "../assets/data/icons/pb.svg";
 import dollar from "../assets/data/icons/dollar.svg";
 import ChooseOption from "../UI/ChooseOption";
-import gt from "../assets/data/shapes/subtract1.svg";
+import gt from "../assets/data/shapes/e30.svg";
+import BackgroundImageForChooseUs from "./BackgroundImageForChooseUs";
 
 const ChooseUs = () => {
   return (
     <>
-      <div className="w-full h-screen flex justify-between mt-[-40px] px-20 py-2 items-center">
+      <div className="w-full h-screen flex justify-between mt-[-40px] px-20 py-2 items-center relative">
+        <BackgroundImageForChooseUs />
         <div className="w-[40%] ml-6">
           <h1 className="text-3xl font-bold mb-4 text-left text-blue-600">
             Not Your Average Realtor

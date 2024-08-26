@@ -8,7 +8,7 @@ const SubscribeFooter = () => {
     { to: "Services", id: "projects" },
     { to: "Testimonials", id: "clients" },
     { to: "Contacts", id: "landing" },
-    { to: "About Us", id: "landing" },
+    { to: "About Us", id: "about" },
   ];
   const scroll = function (id) {
     const section = document.getElementById(id);
@@ -17,10 +17,10 @@ const SubscribeFooter = () => {
   return (
     <div className="bg-blue-600 w-full px-14 py-4 flex justify-between items-center">
       <nav className="flex gap-5 p-4">
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <NavLink
             onClick={() => scroll(item.id)}
-            key={item}
+            key={index}
             end
             to="#"
             className="hover:bg-white hover:text-blue-600 rounded-lg text-white px-2 py-1"

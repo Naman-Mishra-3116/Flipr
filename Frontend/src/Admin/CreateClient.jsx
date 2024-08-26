@@ -19,7 +19,6 @@ const CreateClient = () => {
     designation: "",
   });
 
-
   const handleInputChange = (e) => {
     setFormData((prev) => {
       return {
@@ -113,11 +112,11 @@ const CreateClient = () => {
             >
               <option value="">Select Designation</option>
               <option value="CEO">CEO</option>
+              <option value="Web Devloper">Web Devloper</option>
               <option value="Human Resource">Human Resource</option>
-              <option value="Project Manager">Project Manager</option>
-              <option value="Software Developer">Software Developer</option>
               <option value="Designer">Designer</option>
-              <option value="Marketing Specialist">Marketing Specialist</option>
+              <option value="Project Manager">Project Manager</option>
+              <option value="Programmer">Programmer</option>
             </select>
           </div>
 
