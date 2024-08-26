@@ -4,22 +4,20 @@ import { NavLink } from "react-router-dom";
 const AdminHeader = () => {
   const styleFunction = ({ isActive }) => {
     return isActive
-      ? "bg-[#E1D7B7] text-[#1E2A5E] rounded-md px-4 py-2 transition duration-300"
-      : "hover:bg-[#E1D7B7] hover:text-[#1E2A5E] hover:rounded-md px-4 py-2 transition duration-300";
+      ? "bg-orange-400 text-white rounded-md px-4 py-2 transition duration-300 hover:bg-orange-400 hover:text-white"
+      : "hover:bg-orange-400 hover:text-white hover:rounded-md px-4 py-2 transition duration-300";
   };
 
   return (
-    <header className="bg-[#1E2A5E] w-full py-5 px-8 flex justify-between text-lg">
+    <header className="bg-blue-50 w-full py-5 px-8 flex justify-between text-lg">
       <NavLink
         to={"/"}
-        className={
-          "hover:bg-[#E1D7B7] hover:text-[#1e2a5e] hover:rounded-md px-4 py-2 transition duration-300 text-[#E1D7B7]"
-        }
+        className="hover:bg-orange-400 hover:text-white hover:rounded-md px-4 py-2 transition duration-300 text-black"
         end
       >
         Home
       </NavLink>
-      <nav className="flex justify-center items-center gap-5 text-[#E1D7B7]">
+      <nav className="flex justify-center items-center gap-5 text-black">
         <NavLink to={"/admin"} className={styleFunction} end>
           Projects
         </NavLink>
