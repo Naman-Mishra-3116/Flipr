@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(test));
 
-app.get("/test", (_, res) => {
+app.get("/", (_, res) => {
   res.send("Hello world");
 });
 
