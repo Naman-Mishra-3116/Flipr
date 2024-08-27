@@ -5,10 +5,11 @@ const Row = ({
   item,
   deleteById,
   index,
+  type,
   isClient = false,
   isProject = false,
-  type,
 }) => {
+  console.log("type recieved ", type);
   return (
     <tr className="border-b border-orange-400 hover:bg-blue-50 hover:text-gray-800">
       <td className="py-3 px-6 text-left">{index + 1}</td>
@@ -23,7 +24,7 @@ const Row = ({
 
       <td className="py-3 px-6 text-left">
         <button
-          onClick={() => deleteById(item._id, type)}
+          onClick={() => deleteById(item._id, isClient ? "client" : "project")}
           className="bg-red-500 px-4 py-2 rounded-lg text-white"
         >
           Delete
