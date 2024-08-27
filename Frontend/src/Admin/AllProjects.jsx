@@ -19,6 +19,7 @@ const AllProjects = () => {
           array={["S.no", "Image", "Name", "Description", "Action"]}
           isProject={true}
           isClient={false}
+          type={"project"}
         />
       )}
     </div>

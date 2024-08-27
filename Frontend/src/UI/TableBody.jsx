@@ -2,6 +2,7 @@ import React from "react";
 import Row from "../Admin/ClientRow";
 
 const TableBody = ({ data, deleteById, isProject, isClient,type }) => {
+  console.log("inside table body")
   return (
     <tbody className="text-black text-md font-bold">
       {data.map((item, index) => (
